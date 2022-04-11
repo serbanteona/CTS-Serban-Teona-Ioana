@@ -9,25 +9,25 @@ import java.util.SimpleTimeZone;
 public class AngajatReader extends Reader {
     @Override
     public List<Aplicant> readAplicanti(String file) throws Exception {
-        Scanner input2 = new Scanner(new File(file));
-        input2.useDelimiter(",");
+        Scanner scanner = new Scanner(new File(file));
+        scanner.useDelimiter(",");
         List<Aplicant> aplicanti = new ArrayList<Aplicant>();
 
-        while (input2.hasNext()) {
-            String nume = input2.next();
-            String prenume = input2.next();
-            int varsta = input2.nextInt();
-            int punctaj = input2.nextInt();
-            int nr = input2.nextInt();
+        while (scanner.hasNext()) {
+            String nume = scanner.next();
+            String prenume = scanner.next();
+            int varsta = scanner.nextInt();
+            int punctaj = scanner.nextInt();
+            int nr = scanner.nextInt();
             String[] vect = new String[5];
             for (int i = 0; i < nr; i++)
-                vect[i] = input2.next();
-            int salariu = input2.nextInt();
-            String ocupatie = input2.next();
+                vect[i] = scanner.next();
+            int salariu = scanner.nextInt();
+            String ocupatie = scanner.next();
             Angajat a = new Angajat(nume, prenume, varsta, punctaj, nr, vect, salariu, ocupatie);
             aplicanti.add(a);
         }
-        input2.close();
+        scanner.close();
         return aplicanti;
     }
 }

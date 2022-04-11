@@ -1,5 +1,7 @@
 package clase;
 
+import java.util.Arrays;
+
 public abstract class Aplicant{
 	protected String nume;
 	protected String prenume;
@@ -73,6 +75,19 @@ public abstract class Aplicant{
 		// TODO Auto-generated method stub
 		System.out.println("Aplicantul "+getNume()+" "+getPrenume()+" primeste"+suma+" Euro/zi in proiect.");
 		return suma;
+	}
+
+	@Override
+	public String toString() {
+		
+		return "Aplicant{" +
+				"nume='" + nume + '\'' +
+				", prenume='" + prenume + '\'' +
+				", varsta=" + varsta +
+				", punctaj=" + punctaj +
+				", nr_proiecte=" + nr_proiecte +
+				", denumireProiect=" + Arrays.toString(denumireProiect) +
+				'}';
 	}
 
 }
