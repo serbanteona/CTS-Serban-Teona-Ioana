@@ -2,9 +2,11 @@ package clase;
 
 public abstract class MijlocTransportHandler {
     MijlocTransportHandler mijlocTransportUrmator;
+    protected int pragSuperior;
 
-    public MijlocTransportHandler() {
+    public MijlocTransportHandler(int pragSuperior) {
         this.mijlocTransportUrmator=null;
+        this.pragSuperior=pragSuperior;
     }
 
     public MijlocTransportHandler getMijlocTransportUrmator() {
