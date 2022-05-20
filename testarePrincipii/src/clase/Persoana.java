@@ -51,6 +51,10 @@ public class Persoana implements IPersoana{
 		Calendar dataNasterii=Calendar.getInstance();
 		dataNasterii.set(an,luna,zi);
 		Calendar dataCurenta=Calendar.getInstance();
+		if(dataNasterii.after(dataCurenta)){
+			throw new CNPInvalidException();
+		}
+
 		long varsta_zile=TimeUnit.MILLISECONDS.toDays(Math.abs(dataCurenta.getTimeInMillis()-dataNasterii.getTimeInMillis()));
 		return (int) (varsta_zile/365);				
 	}
